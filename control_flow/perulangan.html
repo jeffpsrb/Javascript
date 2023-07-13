@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perulangan</title>
+</head>
+<body>
+
+    <ul>
+        <li class="buah">mangga</li>
+        <li class="buah">apel</li>
+        <li class="buah">semangka</li>
+        <li class="buah">melon</li>
+    </ul>
+    <script>
+        /* Perulangan for
+        let angka = 5
+
+        for(let i = 0; i <= angka; i++){
+            console.log(i);
+        }
+        */
+        /* perulangan while
+        let cetak = true;
+        console.log(stop)
+
+        while(cetak) {
+            alert("Halo selamat belajar")
+            cetak = confirm("apakah anda ingin memunculkan allert?")
+        }
+        */
+
+        let buah = ["mangga", "anggur", "apel"]
+        let person = {
+            nama: 'jeffrey',
+            umur: 21
+        }
+
+        for(let b in buah){
+            console.log(buah[b])
+        }
+
+        for(let p in person){
+            console.log(person[p])
+        }
+
+        let buah_1 = document.querySelectorAll('.buah')
+        for(let e of buah_1){
+            e.addEventListener('click', function(){
+                this.style.color = 'blue';
+            })
+        }
+        
+//foreach
+
+        let keluarga = [{
+            nama: 'joko',
+            status: 'bekerja',
+            pendapatan: 3000000,
+        },
+        {
+            nama: 'suryani',
+            status: 'bekerja',
+            pendapatan: 200000
+        },
+        {
+            nama: 'tono',
+            status: 'pelajar',
+            pendapatan: 500000
+        }
+    ]
+
+    let kk = keluarga.forEach(function(kk){
+        console.log(kk.nama)
+    })
+
+    //menggunakan map
+    let kk_1 = keluarga.map(function(kk_1) {
+        return {
+            nama: kk_1.nama.toUpperCase()
+        }
+    })
+    console.log(kk_1)
+
+    //menggunakan filter
+    let kk_2 = keluarga.filter(function(kk) {
+        return kk
+    })
+    console.log(kk_2)
+
+    //menggunkan reduce
+    let kk_3 = keluarga.reduce(function(prev, curr){
+        return curr
+    })
+    console.log(kk_3)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
