@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas</title>
+</head>
+<body>
+    <script>
+        // Contoh data list siswa
+        const students = ['John Doe', 'Jane Smith', 'Mike Johnson', 'Anna Lee'];
+
+        // Destructuring array
+        const [student1, student2, ...otherStudents] = students;
+
+        console.log('Destructuring array:');
+        console.log(student1); 
+        console.log(student2); 
+        console.log(otherStudents); 
+
+        // Contoh data list produk
+        const product = {
+            id: 1,
+            name: 'Keyboard',
+            price: 25.99,
+            stock: 100
+        };
+
+        // Destructuring object
+        const { id, name, price, stock } = product;
+
+        console.log('\nDestructuring object:');
+        console.log(id); 
+        console.log(name); 
+        console.log(price); 
+        console.log(stock); 
+
+        // Contoh function dengan default value
+        function greet(name = 'Guest') {
+            console.log(`\nHello, ${name}!`);
+        }
+
+        greet(); 
+        greet('John'); 
+
+        // Contoh alias pada destructuring
+        const person = {
+            firstName: 'John',
+            lastName: 'Doe',
+            age: 30
+        };
+
+        const { firstName: fName, lastName: lName, age: personAge } = person;
+
+        console.log('\nAlias pada destructuring:');
+        console.log(fName); 
+        console.log(lName); 
+        console.log(personAge); 
+    </script>
+</body>
+</html>
