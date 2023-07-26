@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas</title>
+</head>
+<body>
+    <script>
+        const students = [
+            "John",
+            "Jane",
+            "Michael",
+            "Annabella",
+            "Alexandra",
+            "Robert",
+            "David",
+            "Ella",
+            "Alvin",
+        ];
+
+        // Step 1: Buat kondisi untuk menambahkan "Pantas" jika nama siswa memiliki lebih dari 5 karakter
+        const filteredStudents = students.map(name => name.length > 5 ? `Pantas ${name}` : name);
+
+        // Step 2: Gunakan filter untuk menyaring nama siswa yang memiliki huruf 'a' atau 'A' di dalamnya
+        const finalStudents = filteredStudents.filter(name => name.includes('a') || name.includes('A'));
+
+        // Tampilkan hasil pada konsol
+        console.log(finalStudents);
+    </script>
+</body>
+</html>
