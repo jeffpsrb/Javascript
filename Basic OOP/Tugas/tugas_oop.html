@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tugas OOP</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div id="app"></div>
+
+  <!-- Include your library script here -->
+  <script>
+    class Grid {
+      constructor(init) {
+        this.init = init;
+      }
+
+      createHeader() {
+        let open = "<thead><tr>";
+        let close = "</tr></thead>";
+        this.init.columns.forEach((col) => {
+          open += `<th>${col}</th>`;
+        });
+
+        return open + close;
+      }
+
+      createBody() {
+        let open = "<tbody>";
+        let close = "</tbody>";
+
+        this.init.data.forEach((row) => {
+          open += "<tr>";
+          row.forEach((cell) => {
+            open += `<td>${cell}</td>`;
+          });
+          open += "</tr>";
+        });
+
+        return open + close;
+      }
+
+      render(element) {
+        let table =
+          "<table class='table table-hover'>" +
+          this.createHeader() +
+          this.createBody() +
+          "</table>";
+        element.innerHTML = table;
+      }
+    }
+
+    
+    const data = [
+      ["Jeffrey", "jeffrey@gmail.com"],
+      ["Dimas", "dimas@gmail.com"]
+    ];
+
+    const columns = ["Name", "Email"];
+
+    const table = new Grid({
+      columns: columns,
+      data: data
+    });
+
+    const app = document.getElementById("app");
+    table.render(app);
+  </script>
+</body>
+</html>

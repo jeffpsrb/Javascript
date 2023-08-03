@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tugas OOP</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div id="app"></div>
+
+  <!-- Include your library script here -->
+  <script type="module">
+    import Grid from './grid.js';
+
+    const data = [
+      ["Jeffrey", "jeffrey@gmail.com"],
+      ["Dimas", "dimas@gmail.com"]
+    ];
+
+    const columns = ["Name", "Email"];
+
+    const table = new Grid({
+      columns: columns,
+      data: data
+    });
+
+    const app = document.getElementById("app");
+    table.render(app);
+  </script>
+</body>
+</html>
