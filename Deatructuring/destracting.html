@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Destructing Array
+        /*
+        const listbuah = ['mangga', 'salak', 'jeruk', 'anggur', 'durian']
+        const buah1 = listbuah[0];
+        const buah2 = listbuah[1];
+        console.log(buah1, buah2);
+        
+        //menggunakan destracting variable
+        
+        const [buahPertama, buahKedua, buahKetiga] = listbuah;
+        console.log(buahPertama, buahKedua, buahKetiga);
+        
+
+        //destracting variable menggunakan sprate operator
+        const [buahPertama, buahKedua, buahKetiga, ...buahLainnya] = listbuah;
+        console.log(buahPertama, buahKedua, buahKetiga, buahLainnya);
+        */
+
+        //Destructing Object
+            //Membuat sebuah object
+        const buku = {
+            judul:"Harry Potter",
+            harga: "250000",
+            halaman: "1000",
+            bab: "200",
+            pengarang: {
+                nama: "J.K Rowling",
+                negara: "inggris"
+            }
+        };
+        //Mengambil judul dengan cara yang biasa
+        /*
+        const judul = buku.judul;
+        const harga = buku.harga;
+        console.log(judul, harga)
+        */
+
+        //cara destructring
+         /*
+        const {judul, harga, halaman, bab, pengarang:{nama}} = buku;
+        console.log(judul, harga, halaman, bab, nama);
+         */
+
+         //destructuring function
+        /*
+         function printInfoBuku(judul, harga) {
+            console.log(judul, harga);
+         }
+         //cara biasa
+         printInfoBuku(buku.judul, buku.harga);
+        */
+         //cara destructuring
+         function printInfoBuku2({judul, harga, halaman}) {
+            console.log(judul, harga, halaman);
+         };
+         printInfoBuku2(buku);
+    </script>
+</body>
+</html> 

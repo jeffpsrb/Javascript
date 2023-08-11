@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Tebak Angka</title>
+</head>
+<body>
+    <script>
+        function solution(S) {
+  // Step 1: Convert the binary string to an integer
+            let V = parseInt(S, 2);
+
+  // Step 2: Initialize the operations counter
+            let operations = 0;
+
+  // Step 3: Perform the operations
+            while (V !== 0) {
+                if (V % 2 === 0) {
+      // Even number
+                    V >>= 1; // Right-shift operation to divide by 2
+                } else {
+      // Odd number
+                    V -= 1; // Subtract 1
+                }
+                operations++;
+            }
+
+  // Step 4: Return the number of operations
+            return operations;
+        }
+
+// Test cases
+        console.log(solution('011100')); // Output: 7
+        console.log(solution('111')); // Output: 5
+        console.log(solution('1111010101111')); // Output: 22
+// Test with a string consisting of "1" repeated 400,000 times
+        const longString = '1'.repeat(400000);
+        console.log(solution(longString)); // Output: 1599997
+    </script>
+</body>
+</html>
